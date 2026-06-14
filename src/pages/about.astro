@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="关于我 | MySite">
+  <div class="max-w-3xl mx-auto">
+    <header class="mb-10 text-center">
+      <img src="/blog_pages/avatar.jpg" alt="Avatar" class="w-24 h-24 rounded-full shadow-md3-2 mx-auto mb-4 bg-white object-cover" transition:name="avatar" />
+      <h1 class="text-4xl font-bold mb-2">关于我</h1>
+      <p class="text-google-onSurfaceVariant">全栈键政 / 设计爱好者</p>
+    </header>
+
+    <div class="space-y-6">
+      <Card>
+        <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+          <span class="text-google-blue">👤</span> 个人简介
+        </h2>
+        <p class="text-google-onSurfaceVariant leading-relaxed">
+          你好！我是01110110 01101001 01100111 01101110 01111001，一个全栈键政/设计爱好者。 白天我把复杂的问题简单化，晚上我把简单的问题键政化——因为在这个最好的时代，不键政的开发者都是在给大厂当狗😋。 热爱Google Material Design，但更爱在项目里偷偷塞私货：把用户体验优化到让人上瘾，顺便输出一点“别信那些主流叙事”的微妙红药丸。 全栈摸鱼大王，React写前端，Node爬后端，Python搞自动化，偶尔Astro整活。 目标是做出让Z世代看完直呼“WHO THE FUCK IS THIS ALLUDING TO???”的网站。 欢迎来到我的数字地堡，一起来谈治国理政。
+        </p>
+      </Card>
+
+      <Card>
+        <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+          <span class="text-google-green">🛠️</span> 技能栈
+        </h2>
+        <div class="flex flex-wrap gap-2">
+          {['JavaScript', 'TypeScript', 'React', 'Next.js', 'Vue', 'Astro', 'Tailwind CSS', 'Node.js', 'NestJS', 'Python', 'Go', 'PostgreSQL', 'Redis', 'Docker', 'Nginx', 'Linux'].map(skill => (
+            <span class="px-3 py-1.5 bg-google-surfaceContainer text-google-onSurface rounded-md3-sm text-sm font-medium">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </Card>
+
+      <Card>
+        <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+          <span class="text-google-yellow">💼</span> 工作经历
+        </h2>
+        <div class="space-y-6">
+          <div class="relative pl-6 border-l-2 border-google-surfaceContainer">
+            <div class="absolute w-3 h-3 bg-google-blue rounded-full -left-[7px] top-1.5"></div>
+            <h3 class="text-lg font-bold">高级前端工程师 @ 某科技公司</h3>
+            <p class="text-sm text-google-outline mb-2">2023 - 至今</p>
+            <p class="text-google-onSurfaceVariant">负责核心业务线的前端架构设计与开发，推动团队技术栈升级。</p>
+          </div>
+          <div class="relative pl-6 border-l-2 border-google-surfaceContainer">
+            <div class="absolute w-3 h-3 bg-google-surfaceContainer rounded-full -left-[7px] top-1.5"></div>
+            <h3 class="text-lg font-bold">前端开发工程师 @ 某初创团队</h3>
+            <p class="text-sm text-google-outline mb-2">2021 - 2023</p>
+            <p class="text-google-onSurfaceVariant">参与从零到一的产品研发，主导移动端 H5 与小程序开发。</p>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </div>
+</Layout>

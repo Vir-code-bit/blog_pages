@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+const projects = [
+  {
+    title: 'Astro MD3 Theme',
+    description: '一个基于 Astro 和 Tailwind CSS 的 Material Design 3 博客主题。',
+    icon: '🚀',
+    color: 'bg-google-blue',
+    link: '#'
+  },
+  {
+    title: 'React UI Kit',
+    description: '一套轻量级的 React 组件库，专注于无障碍访问。',
+    icon: '⚛️',
+    color: 'bg-google-red',
+    link: '#'
+  },
+  {
+    title: 'Vue Admin Pro',
+    description: '企业级中后台前端解决方案，内置丰富模板。',
+    icon: '📊',
+    color: 'bg-google-green',
+    link: '#'
+  },
+  {
+    title: 'Node.js CLI Tool',
+    description: '提升开发效率的命令行脚手架工具。',
+    icon: '🛠️',
+    color: 'bg-google-yellow',
+    link: '#'
+  }
+];
+---
+
+<Layout title="项目馆 | MySite">
+  <header class="mb-10 px-2">
+    <h1 class="text-4xl font-bold mb-4">项目馆</h1>
+    <p class="text-google-onSurfaceVariant">我参与或主导的开源项目与工具。</p>
+  </header>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {projects.map(project => (
+      <Card href={project.link} class="flex flex-col h-full group">
+        <div class={`w-16 h-16 rounded-md3-md flex items-center justify-center text-3xl mb-6 shadow-sm ${project.color} text-white group-hover:scale-110 transition-transform duration-300`}>
+          {project.icon}
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-google-onSurface">{project.title}</h3>
+        <p class="text-google-onSurfaceVariant flex-grow">{project.description}</p>
+        <div class="mt-6 text-google-blue font-medium text-sm flex items-center gap-1">
+          查看详情
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </Card>
+    ))}
+  </div>
+</Layout>

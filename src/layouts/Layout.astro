@@ -1,0 +1,40 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "My Personal Website based on Material Design 3" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/blog_pages/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <ViewTransitions />
+  </head>
+  <body class="bg-google-surface text-google-onSurface font-sans antialiased min-h-screen flex flex-col selection:bg-google-blue selection:text-white">
+    <Navbar />
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl mt-16">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

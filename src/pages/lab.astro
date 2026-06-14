@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="实验室 | MySite">
+  <header class="mb-10 px-2">
+    <h1 class="text-4xl font-bold mb-4">实验室</h1>
+    <p class="text-google-onSurfaceVariant">一些纯前端的实用小工具，即开即用。</p>
+  </header>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <Card class="flex items-center justify-center min-h-[200px] border-2 border-dashed border-google-surfaceContainer bg-transparent shadow-none hover:shadow-none hover:border-google-blue/50">
+      <div class="text-center">
+        <div class="text-4xl mb-2">🔧</div>
+        <h3 class="text-lg font-medium text-google-onSurfaceVariant">JSON 格式化工具 (开发中)</h3>
+      </div>
+    </Card>
+    <Card class="flex items-center justify-center min-h-[200px] border-2 border-dashed border-google-surfaceContainer bg-transparent shadow-none hover:shadow-none hover:border-google-blue/50">
+      <div class="text-center">
+        <div class="text-4xl mb-2">🧮</div>
+        <h3 class="text-lg font-medium text-google-onSurfaceVariant">正则表达式测试 (开发中)</h3>
+      </div>
+    </Card>
+  </div>
+</Layout>
